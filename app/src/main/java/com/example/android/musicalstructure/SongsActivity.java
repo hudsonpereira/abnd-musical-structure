@@ -4,16 +4,19 @@ import android.content.Intent;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.example.android.musicalstructure.adapter.SongAdapter;
 import com.example.android.musicalstructure.pojo.Artist;
 import com.example.android.musicalstructure.pojo.Song;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class SongsActivity extends AppCompatActivity {
+public class SongsActivity extends AppCompatActivity implements AdapterView.OnItemClickListener {
 
     public static final String EXTRA_ARTIST = "EXTRA_ARTIST";
 
@@ -77,5 +80,17 @@ public class SongsActivity extends AppCompatActivity {
 
 
         songsListView.setAdapter(new SongAdapter(songs));
+
+        songsListView.setOnItemClickListener(this);
+    }
+
+    @Override
+    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+        Song song = songs.get(position);
+
+        Intent intent = new Intent(this, PlayActivity.class);
+        intent.putExtra(PlayActivity.EXTRA_SONG, (Serializable) song);
+
+        startActivity(intent);
     }
 }
