@@ -1,6 +1,7 @@
 package com.example.android.musicalstructure;
 
 import android.content.Intent;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ListView;
@@ -31,7 +32,12 @@ public class SongsActivity extends AppCompatActivity {
 
         Artist artist = (Artist) intent.getSerializableExtra(EXTRA_ARTIST);
 
-        getSupportActionBar().setTitle(artist.getName());
+
+        ActionBar actionBar = getSupportActionBar();
+
+        if (actionBar != null) {
+            actionBar.setTitle(artist.getName());
+        }
 
         songs = new ArrayList<>();
 
