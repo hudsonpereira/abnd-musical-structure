@@ -21,20 +21,31 @@
         app:layout_constraintTop_toBottomOf="@id/artist_image"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        android:textSize="36sp"
+        android:textSize="26sp"
         android:layout_margin="16dp"
-        android:text="Now Playing: "
+        android:text="Dancing on a Vulcano"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:text="Jordan Rudess"
+        android:textSize="18sp"
+        app:layout_constraintTop_toBottomOf="@id/song_title_text_view"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:id="@+id/artist_name_text_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
     <ImageButton
+        android:id="@+id/play_pause_image_button"
         style="@style/Widget.AppCompat.Button.Borderless"
         android:layout_marginTop="16dp"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/song_title_text_view"
+        app:layout_constraintTop_toBottomOf="@id/artist_name_text_view"
         android:src="@drawable/ic_pause_black_24dp"
-        android:layout_width="30dp"
-        android:layout_height="30dp" />
+        android:layout_width="50dp"
+        android:layout_height="50dp" />
 
 </android.support.constraint.ConstraintLayout>

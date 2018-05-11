@@ -24,6 +24,8 @@ public class SongsActivity extends AppCompatActivity implements AdapterView.OnIt
 
     List<Song> songs;
 
+    Artist artist;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,7 +35,7 @@ public class SongsActivity extends AppCompatActivity implements AdapterView.OnIt
 
         Intent intent = getIntent();
 
-        Artist artist = (Artist) intent.getSerializableExtra(EXTRA_ARTIST);
+        artist = (Artist) intent.getSerializableExtra(EXTRA_ARTIST);
 
 
         ActionBar actionBar = getSupportActionBar();
@@ -90,6 +92,7 @@ public class SongsActivity extends AppCompatActivity implements AdapterView.OnIt
 
         Intent intent = new Intent(this, PlayActivity.class);
         intent.putExtra(PlayActivity.EXTRA_SONG, song);
+        intent.putExtra(PlayActivity.EXTRA_ARTIST, artist);
 
         startActivity(intent);
     }
