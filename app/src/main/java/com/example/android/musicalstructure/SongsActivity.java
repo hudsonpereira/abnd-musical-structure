@@ -89,7 +89,7 @@ public class SongsActivity extends AppCompatActivity implements AdapterView.OnIt
         Song song = songs.get(position);
 
         Intent intent = new Intent(this, PlayActivity.class);
-        intent.putExtra(PlayActivity.EXTRA_SONG, (Serializable) song);
+        intent.putExtra(PlayActivity.EXTRA_SONG, song);
 
         startActivity(intent);
     }

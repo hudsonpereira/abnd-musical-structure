@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         Artist artist = artists.get(position);
         Intent intent = new Intent(this, SongsActivity.class);
 
-        intent.putExtra(SongsActivity.EXTRA_ARTIST, (Serializable) artist);
+        intent.putExtra(SongsActivity.EXTRA_ARTIST, artist);
 
         startActivity(intent);
     }
