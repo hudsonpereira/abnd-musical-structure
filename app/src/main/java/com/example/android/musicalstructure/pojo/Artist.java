@@ -27,4 +27,8 @@ public class Artist implements Serializable{
     public int getImageResource() {
         return imageResource;
     }
+
+    public int getId() {
+        return id;
+    }
 }
